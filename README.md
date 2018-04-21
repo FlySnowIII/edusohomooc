@@ -16,3 +16,13 @@ sudo docker exec edusohomooc bash bakupmysql.sh
 sudo docker exec edusohomooc bash changetophpmyadmin.sh
 
 sudo docker exec edusohomooc bash changetoweb.sh
+
+
+DB:
+root:0pp00pp0
+edusoho:edusoho
+
+Mooc:
+admin
+0pp00pp0
+admin@studymooc.com
