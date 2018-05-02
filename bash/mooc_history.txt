@@ -1,0 +1,130 @@
+    1  ll
+    2  apt-get update
+    3  apt-get install -y mysql-server mysql-client
+    4  apt-get install -y apache2
+    5  apt-get install -y php7.0 php7.0-mysql php7.0-gd php7.0-mbstring php-dom libapache2-mod-php libapache2-mod-xsendfile php-curl
+    6  apt-get install -y composer
+    7  apt-get install -y vim curl wget unzip
+    8  history 
+    9  a2enmod php7.0
+   10  a2enmod rewrite
+   11  a2enmod xsendfile
+   12  service mysql restart
+   13  service apache2 restart
+   14  mysql -u root -p
+   15  cd /etc/php/7.0/
+   16  ll
+   17  cd apache2/
+   18  ll
+   19  vim php.ini 
+   20  service apache2 restart
+   21  cd ~/
+   22  ll
+   23  wget https://files.phpmyadmin.net/phpMyAdmin/4.8.0/phpMyAdmin-4.8.0-all-languages.zip
+   24  wget http://download.edusoho.com/edusoho-8.2.17.tar.gz
+   25  ll
+   26  unzip phpMyAdmin-4.8.0-all-languages.zip 
+   27  tar -zxvf edusoho-8.2.17.tar.gz 
+   28  ll
+   29  cd edusoho
+   30  ll
+   31  cd ..
+   32  mv edusoho /var/www/
+   33  ll
+   34  mv phpMyAdmin-4.8.0-all-languages phpmyadmin
+   35  ll
+   36  mv phpmyadmin/ /var/www/html/
+   37  ll
+   38  cd /var/www/
+   39  ll
+   40  chown -Rf www-data:www-data edusoho/
+   41  cd html/
+   42  ll
+   43  cd ..
+   44  ll
+   45  cd edusoho/
+   46  ll
+   47  cd ..
+   48  ll
+   49  cd /etc/apache2/
+   50  ll
+   51  cd sites-enabled/
+   52  ll
+   53  vim 000-default.conf 
+   54  sudo apt-get install postfix -y
+   55  apt-get install postfix -y
+   56  sudo apt-get install mailutils
+   57  ll
+   58  cp 000-default.conf phpmyadmin.conf
+   59  ll
+   60  rm 000-default.conf 
+   61  cat phpmyadmin.conf 
+   62  service apache2 restart
+   63  vim edusoho.conf
+   64  ll
+   65  mv phpmyadmin.conf phpmyadmin.conf.bak
+   66  service apache2 restart
+   67  ll
+   68  mv phpmyadmin.conf.bak phpmyadmin.conf
+   69  mv edusoho.conf edusoho.conf.bak
+   70  ls
+   71  service apache2 restart
+   72  cd ~/
+   73  ll
+   74  vim changetophpmyadmin
+   75  mv changetophpmyadmin changetophpmyadmin.sh
+   76  bash changetophpmyadmin.sh 
+   77  cd /etc/apache2/
+   78  ll
+   79  cd sites-enabled/
+   80  pwd
+   81  service apache2 restart
+   82  cd ~/
+   83  vim changetophpmyadmin.sh 
+   84  vim changetoweb.sh
+   85  bash changetophpmyadmin.sh 
+   86  bash changetoweb.sh 
+   87  bash changetophpmyadmin.sh 
+   88  vim bakupmysql
+   89  vim bakupmysql.sh
+   90  ll
+   91  vim bakupmysql.sh 
+   92  bash bakupmysql.sh 
+   93  vim bakupmysql.sh 
+   94  bash bakupmysql.sh 
+   95  ll
+   96  vim bakupmysql.sh 
+   97  cd /
+   98  ll
+   99  cd mysqlbak/
+  100  cd ~/
+  101  pwd
+  102  ll
+  103  vim bakupmysql.sh 
+  104  ll
+  105  mv bakupmysql.sh /
+  106  mv changetophpmyadmin.sh /
+  107  mv changetoweb.sh /
+  108  cd /
+  109  ll
+  110  bash bakupmysql.sh 
+  111  vim bakupmysql.sh 
+  112  bash bakupmysql.sh 
+  113  cd mysqlbak/
+  114  ll
+  115  cat mooc-2018-04-21.dump 
+  116  ll
+  117  cd ..
+  118  ll
+  119  service mysql start
+  120  service apache2 start
+  121  exit
+  122  bash runserver.sh 
+  123  mysql -u root -p
+  124  history 
+  125  ll
+  126  cat bakupmysql.sh 
+  127  cat changetophpmyadmin.sh 
+  128  cat changetoweb.sh 
+  129  cat runserver.sh 
+  130  history > history.txt
